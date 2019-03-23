@@ -1,0 +1,8 @@
+{
+  "name": "sakhroart-webapp",
+  "version": "1.0.0",
+  "main": "server",
+  "author": "Sava-Danylo Sakhro",
+  "license": "MIT",
+  "private": true
+}
