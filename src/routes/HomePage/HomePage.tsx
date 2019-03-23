@@ -2,6 +2,8 @@ import { debounce } from "debounce";
 import { NextFunctionComponent } from "next";
 import React, { Fragment, useEffect, useState } from "react";
 
+import { LanguageSwitcher } from 'components'
+
 import c from "./HomePage.scss";
 
 import homeImgLg from "static/images/home/home-lg.jpg";
@@ -59,7 +61,7 @@ const getText = (key, lng, t) => {
 };
 
 export const HomePageBase: NextFunctionComponent<IProps> = ({
-  t, lng
+  t, lng,
 }) => {
   const [imgSrc, setImgSrc] = useState(homeImgXl);
 
@@ -79,6 +81,9 @@ export const HomePageBase: NextFunctionComponent<IProps> = ({
         className={c.bg}
         src={imgSrc}
       />
+
+      <LanguageSwitcher lng={lng} />
+
       <section>
         <div className={c.firstRow}>
           <div className={c.firstColumn}>

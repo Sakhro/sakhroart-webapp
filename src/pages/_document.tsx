@@ -1,14 +1,22 @@
+import { lngFromReq } from "next-i18next/dist/commonjs/utils";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
-export default class MyDocument extends Document {
+interface IProps {
+  lng: string;
+}
+export default class MyDocument extends Document<IProps> {
   public static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    const lng = lngFromReq(ctx.req);
+
+    return { lng, ...initialProps };
   }
 
   public render() {
+    const { lng } = this.props;
+
     return (
-      <Html>
+      <Html lang={lng}>
         <Head>
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#b71c1c" />
