@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { Fragment, useState } from "react";
 
-import { Header, Overlay, Nav } from "components";
+import { Header, Nav, Overlay } from "components";
 import { NextFunctionComponent } from "next";
 
 interface IProps {

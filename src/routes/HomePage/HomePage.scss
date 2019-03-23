@@ -49,15 +49,15 @@
 .secondRow {
   @include absolute(top 19% left 0 right 0 bottom 61%);
 
-  .secondColumn {
-    font-weight: 700
-  }
+  // .secondColumn {
+  //   font-weight: 700
+  // }
 }
 
 .thirdRow {
   @include absolute(top 38% left 0 right 0 bottom 39%);
 
-  .secondColumn {
-    font-weight: 700
-  }
+  // .secondColumn {
+  //   font-weight: 700
+  // }
 }

@@ -8,6 +8,11 @@ import homeImgLg from "static/images/home/home-lg.jpg";
 import homeImgXl from "static/images/home/home-xl.jpg";
 import homeImgXs from "static/images/home/home-xs.jpg";
 
+interface IProps {
+  lng: string;
+  t: (key: string) => string;
+}
+
 const updateDimensions = (setImgSrc) => () => {
   const windowWidth = window.innerWidth;
 
@@ -28,7 +33,34 @@ const updateDimensions = (setImgSrc) => () => {
   }
 };
 
-export const HomePageBase: NextFunctionComponent = () => {
+const getText = (key, lng, t) => {
+  const isEN = lng === "en";
+
+  switch (key) {
+    case "cult":
+      return isEN
+        ? t("olesya")
+        : t("cult");
+    case "bags":
+      return isEN
+        ? t("sakhro")
+        : t("bags");
+    case "olesya":
+      return isEN
+        ? t("cult")
+        : t("olesya");
+    case "sakhro":
+      return isEN
+        ? t("bags")
+        : t("sakhro");
+    default:
+      return;
+  }
+};
+
+export const HomePageBase: NextFunctionComponent<IProps> = ({
+  t, lng
+}) => {
   const [imgSrc, setImgSrc] = useState(homeImgXl);
 
   useEffect(() => {
@@ -50,11 +82,11 @@ export const HomePageBase: NextFunctionComponent = () => {
       <section>
         <div className={c.firstRow}>
           <div className={c.firstColumn}>
-            Культові
+            {getText("cult", lng, t)}
           </div>
 
           <div className={c.secondColumn}>
-            Сумки
+            {getText("bags", lng, t)}
           </div>
         </div>
 
@@ -64,7 +96,7 @@ export const HomePageBase: NextFunctionComponent = () => {
           </div>
 
           <div className={c.secondColumn}>
-            Олесі
+            {getText("olesya", lng, t)}
           </div>
         </div>
 
@@ -72,7 +104,7 @@ export const HomePageBase: NextFunctionComponent = () => {
           <div className={c.firstColumn} />
 
           <div className={c.secondColumn}>
-            Сахро
+            {getText("sakhro", lng, t)}
           </div>
         </div>
       </section>
