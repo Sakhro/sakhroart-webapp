@@ -1,0 +1,1 @@
+export { HorizontalXS } from "./HorizontalXS";

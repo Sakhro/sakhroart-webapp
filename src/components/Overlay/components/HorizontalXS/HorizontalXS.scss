@@ -1,0 +1,56 @@
+@import '../../../../styles/base';
+
+.hFirst,
+.hSecond,
+.hThird,
+.hFourth,
+.vFirst {
+  @include size(auto, 1px);
+  @include z-index('overlay');
+
+  opacity: .4;
+  background-color: $color-white;
+  transition: background-color 500ms ease-in-out;
+  pointer-events: none;
+
+  &.primary {
+    background-color: rgba($color-primary, 0.33);
+  }
+}
+
+.vFirst {
+  @include size(1px, auto);
+  @include fixed(top 0 left 61% bottom 0);
+}
+
+.hFirst {
+  @include fixed(top 7% left 0 right 0);
+}
+
+.hSecond {
+  @include fixed(top 19% left 0 right 0);
+}
+
+.hThird {
+  @include fixed(top 38% left 0 right 0);
+}
+
+.hFourth {
+  @include fixed(top 61% left 0 right 0);
+}
+
+.circle {
+  @include size(62vh, 62vh);
+  @include border-radius(100%);
+  @include z-index('overlay');
+  @include fixed(bottom 0 right 39%);
+
+  opacity: .4;
+  pointer-events: none;
+  border: 1px solid $color-white;
+  transition: border-color 500ms ease-in-out;
+
+  &.primary {
+    border-color: rgba($color-primary, 0.33);
+  }
+}

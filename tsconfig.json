@@ -13,11 +13,6 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "routes/*": ["src/routes/*"],
-      "static/images/*": ["static/images/*"],
-    },
     "lib": [
       "dom",
       "es2016"
