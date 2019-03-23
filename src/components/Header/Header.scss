@@ -1,0 +1,13 @@
+@import '../../styles/base';
+
+.container {
+  @include absolute(top 0 left 0);
+  @include flex($align: center);
+  @include size(100%, 50px);
+  @include z-index('header');
+  @include px(2);
+}
+
+.hamburger {
+  margin-left: auto;
+}

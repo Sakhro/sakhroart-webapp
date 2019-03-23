@@ -1,0 +1,137 @@
+@import '../../styles/base';
+
+.container {
+  @include fixed( top 0 left 0 right 0 bottom 0);
+  @include z-index('nav');
+  @include flex($direction: column, $align: center);
+  @include p(2);
+
+  box-shadow: 0 4px 10px 5px rgba($color-black, 0.07);
+  transform: translateX(110%);
+  transition: transform 500ms ease-in-out;
+  color: $color-primary;
+  background-color: $color-white;
+
+  &.opened {
+    transform: translateX(0);
+  }
+}
+
+ul {
+  @include size(100%);
+  @include list-unstyled;
+  @include flex($direction: column);
+}
+
+.home,
+.history,
+.collections {
+  @include flex($align: center, $justify: center);
+
+  opacity: 0;
+  transform: translateX(200%);
+
+  &.opened {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.home {
+  @include size(calc(61% - 16px), 13%);
+
+  transition: all 1000ms ease-in-out;
+  margin-top: 5%;
+  margin-right: auto;
+
+  @include media-breakpoint-up (xl) {
+    margin-top: 1.5%;
+  }
+}
+
+.collections {
+  @include size(calc(39% - 16px), 19%);
+
+  transition: all 1000ms ease-in-out 100ms;
+  margin-left: auto;
+
+  @include media-breakpoint-up (xl) {
+    margin-top: 1%;
+  }
+}
+
+.history {
+  @include size(calc(39% - 16px), 24%);
+
+  transition: all 1000ms ease-in-out 200ms;
+  margin-left: auto;
+}
+
+.link {
+  @include font(b24reg, $color: $color-primary);
+
+  text-transform: uppercase;
+
+  @include media-breakpoint-up (sm) {
+    @include font(b42reg);
+  }
+
+  @include media-breakpoint-up (xl) {
+    @include font(b62reg);
+  }
+}
+
+.close {
+  @include relative;
+  @include size(19px);
+
+  border: 0;
+  background: none;
+  margin-left: auto;
+
+  &::before,
+  &::after {
+    @include absolute(top 0 right 19);
+
+    content: ' ';
+    height: 19px;
+    width: 2px;
+    background-color: $color-primary;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  @include media-breakpoint-up (sm) {
+    &::before,
+    &::after {
+      height: 25px;
+    }
+  }
+}
+
+.socials {
+  opacity: 0;
+  margin-left: auto;
+  transform: translateX(200%);
+  transition: all 1000ms ease-in-out;
+
+  &.opened {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  a {
+    @include ml(3);
+    color: $color-primary;
+
+    &:hover {
+      color: darken($color: $color-primary, $amount: 20%);
+    }
+  }
+}

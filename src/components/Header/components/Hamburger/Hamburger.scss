@@ -1,0 +1,118 @@
+@import '../../../../styles/base';
+
+.container {
+  @include fixed(top 16px left 0 right 0);
+  @include pr(2);
+  @include size(22px);
+  @include flex($direction: column, $justify: space-between, $align: flex-end);
+  @include border-radius(100%);
+
+  background-color: transparent;
+  border: 0px;
+
+  &:focus {
+    outline: none;
+
+    .topBar {
+      animation: animateTopBar 2000ms ease-in-out infinite;
+    }
+    
+    .middleBar {
+      animation: animateMiddleBar 2000ms ease-in-out 500ms infinite;
+    }
+    
+    .bottomBar {
+      animation: animateBottomBar 2000ms ease-in-out 1000ms infinite;
+    }
+  }
+}
+
+.topBar,
+.middleBar,
+.bottomBar {
+  @include border-radius(10px);
+
+  background-color: $color-primary;
+
+  &.white {
+    background-color: $color-white;
+  }
+}
+
+.topBar {
+  @include size(20px, 2px);
+}
+
+.middleBar {
+  @include size(26px, 2px);
+}
+
+.bottomBar {
+  @include size(17px, 2px);
+}
+
+@keyframes animateTopBar {
+  0% {
+    width: 20px;
+  }
+
+  25% {
+    width: 16px;
+  }
+
+  50% {
+    width: 24px;
+  }
+
+  75% {
+    width: 18px;
+  }
+
+  100% {
+    width: 20px;
+  }  
+}
+
+@keyframes animateMiddleBar {
+  0% {
+    width: 26px;
+  }
+
+  25% {
+    width: 20px;
+  }
+
+  50% {
+    width: 30px;
+  }
+
+  75% {
+    width: 24px;
+  }
+
+  100% {
+    width: 26px;
+  }  
+}
+
+@keyframes animateBottomBar {
+  0% {
+    width: 17px;
+  }
+
+  25% {
+    width: 13px;
+  }
+
+  50% {
+    width: 23px;
+  }
+
+  75% {
+    width: 15px;
+  }
+
+  100% {
+    width: 17px;
+  }  
+}

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { Fragment, useState } from "react";
 
-import { Overlay } from "components";
+import { Header, Overlay, Nav } from "components";
 import { NextFunctionComponent } from "next";
 
 interface IProps {
@@ -11,7 +11,11 @@ interface IProps {
 export const MainLayout: NextFunctionComponent<IProps> = ({
   children, meta,
 }) => {
-  const [navOpen, toggleNav] = useState(false);
+  const [navState, setNavState] = useState(false);
+
+  const toggleNav = () => {
+    setNavState(!navState);
+  };
 
   return (
     <Fragment>
@@ -32,7 +36,21 @@ export const MainLayout: NextFunctionComponent<IProps> = ({
 
       </Head>
 
-      <Overlay isHome={false} navOpen={navOpen} />
+      <Overlay
+        isHome={false}
+        navOpen={navState}
+      />
+
+      <Header
+        isHome={false}
+        navOpen={navState}
+        toggleNav={toggleNav}
+      />
+
+      <Nav
+        show={navState}
+        onClose={toggleNav}
+      />
 
       <main>
         {children}
