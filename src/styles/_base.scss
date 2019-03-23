@@ -1,0 +1,7 @@
+@import 'variables';
+@import '~@7ninjas/scss-mixins/all';
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}

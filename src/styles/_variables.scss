@@ -1,0 +1,180 @@
+// This file contains all shared variables like colors, font sizes etc.
+
+// Variables
+// Palette
+$color-black: #000000;
+$color-white: #ffffff;
+$color-primary: #b71c1c;
+$color-chartreuse: #76FF03;
+$color-shadow: rgba($color-black, 0.27);
+
+// Bootstrap reboot
+$headings-margin-bottom: 8px;
+$font-family-base: Play, sans-serif;
+$font-family-secondary: Montserrat, sans-serif;
+$font-size-base: 16px; // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
+$font-weight-base: normal;
+$line-height-base: $font-size-base;
+$dt-font-weight: $font-weight-base;
+$paragraph-margin-bottom: 0;
+
+$body-color: $color-white;
+$body-bg: $color-white;
+
+$link-color: 'innitial';
+$link-hover-color: 'innitial';
+$link-decoration: none;
+$link-hover-decoration: none;
+
+$table-cell-padding: 0;
+
+$text-muted: $color-black;
+
+// Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 500px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+// Grid
+$grid-columns: 12;
+$grid-fluid: false;
+$grid-gutter-width: 30px;
+$grid-gutter-widths: (
+  xs: 20px,
+  sm: 20px,
+  md: 20px,
+  lg: 30px,
+  xl: 30px,
+  xxl: 30px
+);
+$container-max-widths: (
+  sm: 484px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+// Positioning
+$z-indexes: (
+  'modal',
+  'overlay',
+  'tooltip',
+  'nav',
+  'header',
+  'title',
+  'body',
+  'underlayer',
+);
+
+// Spacing
+$spacing-sizes: (
+  auto: auto,
+  0: 0,
+  0.25: 2px,
+  0.5: 4px,
+  1: 8px,
+  2: 16px,
+  3: 24px,
+  4: 32px,
+  5: 40px,
+  6: 48px,
+  7: 56px,
+  8: 64px,
+  9: 72px,
+  10: 80px
+);
+$spacing-important: false;
+
+// Typography
+$typography: (
+  base: (
+    base: (
+      font-family: $font-family-base,
+      font-size: $font-size-base,
+      font-weight: 400,
+    )
+  ),
+  secondary: (
+    base: (
+      font-family: $font-family-secondary,
+      font-size: $font-size-base,
+      line-height: 24px,
+      font-weight: 400,
+    )
+  ),
+  b24reg: (
+    base: (
+      font-family: $font-family-base,
+      font-size: 24px,
+      font-weight: 400,
+    )
+  ),
+  s24reg: (
+    base: (
+      font-family: $font-family-secondary,
+      font-size: 24px,
+      line-height: 34px,
+      font-weight: 400,
+    )
+  ),
+  b32reg: (
+    base: (
+      font-family: $font-family-base,
+      font-size: 32px,
+      font-weight: 400,
+    )
+  ),
+  b32bold: (
+    base: (
+      font-family: $font-family-base,
+      font-size: 32px,
+      font-weight: 700,
+    )
+  ),
+  b42reg: (
+    base: (
+      font-family: $font-family-base,
+      font-size: 42px,
+      font-weight: 400,
+    )
+  ),
+  b42bold: (
+    base: (
+      font-family: $font-family-base,
+      font-size: 42px,
+      font-weight: 700,
+    )
+  ),
+  b52bold: (
+    base: (
+      font-family: $font-family-base,
+      font-size: 52px,
+      font-weight: 700,
+    )
+  ),
+  b72bold: (
+    base: (
+      font-family: $font-family-base,
+      font-size: 72px,
+      font-weight: 700,
+    )
+  ),
+  b72reg: (
+    base: (
+      font-family: $font-family-base,
+      font-size: 72px,
+      font-weight: 400,
+    )
+  ),
+  b62reg: (
+    base: (
+      font-family: $font-family-base,
+      font-size: 62px,
+      font-weight: 400,
+    )
+  ),
+);

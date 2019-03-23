@@ -1,0 +1,55 @@
+@import '../../styles/base';
+
+.bg {
+  @include size(100%);
+
+  object-fit: cover;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.firstColumn,
+.secondColumn {
+  @include font(b32reg, $color: $color-primary);
+
+  text-transform: uppercase;
+  text-align: center;
+
+  @include media-breakpoint-up (sm) {
+    @include font(b42reg);
+  }
+
+  @include media-breakpoint-up (xl) {
+    @include font(b62reg);
+  }
+}
+
+.firstColumn {
+  @include size(62%, auto);
+}
+
+.secondColumn {
+  @include size(38%, auto);
+}
+
+.firstRow,
+.secondRow,
+.thirdRow {
+  @include size(100%, auto);
+  @include flex($direction: row, $align: center);
+}
+
+.firstRow {
+  @include absolute(top 7% left 0 right 0 bottom 81%);
+}
+
+.secondRow {
+  @include absolute(top 19% left 0 right 0 bottom 61%);
+}
+
+.thirdRow {
+  @include absolute(top 38% left 0 right 0 bottom 39%);
+}
