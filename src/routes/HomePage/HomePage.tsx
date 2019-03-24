@@ -1,17 +1,17 @@
 import { debounce } from "debounce";
 import { NextFunctionComponent } from "next";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { LanguageSwitcher } from 'components'
+import { LanguageSwitcher } from "components";
+import { MainLayout } from "layouts";
 
 import c from "./HomePage.scss";
 
-import homeImgLg from "static/images/home/home-lg.jpg";
-import homeImgXl from "static/images/home/home-xl.jpg";
-import homeImgXs from "static/images/home/home-xs.jpg";
+import { homeLG, homeXl, homeXS } from "static/images/home";
 
 interface IProps {
   lng: string;
+  meta: IMeta;
   t: (key: string) => string;
 }
 
@@ -23,15 +23,15 @@ const updateDimensions = (setImgSrc) => () => {
 
   switch (true) {
     case isXS:
-      setImgSrc(homeImgXs);
+      setImgSrc(homeXS);
 
       break;
     case isLG:
-      setImgSrc(homeImgLg);
+      setImgSrc(homeLG);
 
       break;
     default:
-      setImgSrc(homeImgXl);
+      setImgSrc(homeXl);
   }
 };
 
@@ -61,9 +61,9 @@ const getText = (key, lng, t) => {
 };
 
 export const HomePageBase: NextFunctionComponent<IProps> = ({
-  t, lng,
+  t, lng, meta,
 }) => {
-  const [imgSrc, setImgSrc] = useState(homeImgXl);
+  const [imgSrc, setImgSrc] = useState(homeLG);
 
   useEffect(() => {
     updateDimensions(setImgSrc)();
@@ -76,7 +76,7 @@ export const HomePageBase: NextFunctionComponent<IProps> = ({
   }, []);
 
   return (
-    <Fragment>
+    <MainLayout meta={meta}>
       <img
         className={c.bg}
         src={imgSrc}
@@ -113,6 +113,6 @@ export const HomePageBase: NextFunctionComponent<IProps> = ({
           </div>
         </div>
       </section>
-    </Fragment>
+    </MainLayout>
   );
 };

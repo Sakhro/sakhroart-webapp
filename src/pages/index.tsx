@@ -1,9 +1,1 @@
-import { MainLayout } from "layouts";
-
-import { HomePage } from "routes/HomePage";
-
-export default () => (
-  <MainLayout>
-    <HomePage />
-  </MainLayout>
-);
+export { HomePage as default } from "routes/HomePage";

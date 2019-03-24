@@ -2,8 +2,23 @@ import { withNamespaces } from "server/i18n";
 
 import { HomePageBase } from "./HomePage";
 
+import { homeXl } from "static/images/home";
+
 export const HomePage = withNamespaces("common")(HomePageBase);
+
+const title = "Олеся Сахро | Офіційний сайт";
+const description = "Культові сумки від Олесі Сахро";
+const meta = {
+  title,
+  description,
+  og: {
+    title,
+    description,
+    image: homeXl,
+  },
+};
 
 HomePage.getInitialProps = () => ({
   namespacesRequired: ["common"],
+  meta,
 });
