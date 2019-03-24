@@ -8,6 +8,7 @@ interface IProps {
   offset?: number;
   duration?: number;
   delay?: number;
+  itemKey: string;
   primaryImg: string;
   secondaryImg: string;
   title: string;
@@ -166,9 +167,9 @@ export class Card extends PureComponent<IProps, IState> {
   }
 
   private animateIn = (callback) => {
-    const { setActive, title } = this.props;
+    const { setActive, itemKey } = this.props;
 
-    setActive(title);
+    setActive(itemKey);
 
     this.animate(c.animateIn, () => {
       if (!this.props.animateOnce) {

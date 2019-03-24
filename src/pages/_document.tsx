@@ -31,6 +31,8 @@ export default class MyDocument extends Document<IProps> {
             href="https://fonts.googleapis.com/css?family=Montserrat:400|Play:400,700&amp;subset=cyrillic"
             rel="stylesheet"
           />
+
+          <link rel="shortcut icon" href="/static/favicon.ico" />
         </Head>
 
         <body>

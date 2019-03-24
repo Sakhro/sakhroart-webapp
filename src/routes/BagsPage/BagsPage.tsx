@@ -16,7 +16,7 @@ interface IProps {
 }
 
 export const Bags: NextFunctionComponent<IProps> = ({ t, meta }) => {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("asteria");
   const fixedTitle: boolean = useSetTitlePosition();
 
   return (
@@ -33,6 +33,7 @@ export const Bags: NextFunctionComponent<IProps> = ({ t, meta }) => {
             <Card
               key={key}
               link="/"
+              itemKey={key}
               title={t(key)}
               setActive={setActive}
               primaryImg={BAGS_DATA[key].primaryImg}
