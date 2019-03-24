@@ -4,5 +4,5 @@ module.exports = new NextI18Next({
   defaultLanguage: 'en',
   otherLanguages: ['ua'],
   localeSubpaths: 'foreign',
-  serverLanguageDetection: true
+  browserLanguageDetection: true
 })

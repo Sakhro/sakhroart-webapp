@@ -1,8 +1,18 @@
+// const { LOCALE_SUBPATHS  } = process.env
+
 const withCss = require('@zeit/next-css')
 const withSass = require('@zeit/next-sass')
 const withPlugins = require('next-compose-plugins');
 const withTypescript = require('@zeit/next-typescript')
 const withOptimizedImages = require('next-optimized-images');
+
+// const nextConfig = {
+//   publicRuntimeConfig: {
+//     localeSubpaths: typeof LOCALE_SUBPATHS === 'string'
+//       ? LOCALE_SUBPATHS
+//       : 'none',
+//   }
+// }
 
 module.exports = withPlugins([
   [withTypescript],

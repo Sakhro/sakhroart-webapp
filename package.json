@@ -9,6 +9,7 @@
     "dev": "node server",
     "build": "next build src",
     "start": "NODE_ENV=production node server",
+    "export": "next export src",
     "lint": "tslint -c tslint.json 'src/**/*.ts{,x}' 'server/**/*.ts{,x}'",
     "lint:fix": "tslint -c tslint.json 'src/**/*.ts{,x}' 'server/**/*.ts{,x}' --fix --format verbose"
   },
