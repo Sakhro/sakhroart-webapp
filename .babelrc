@@ -5,10 +5,11 @@
     ["module-resolver", {
       "root": ["."],
       "alias": {
+        "static": "./static",
         "styles": "./src/styles",
         "routes": "./src/routes",
-        "static": "./static",
         "layouts": "./src/layouts",
+        "services": "./src/services",
         "components": "./src/components",
       }
     }]

@@ -1,7 +1,7 @@
 import cn from "classnames";
 import { NextFunctionComponent } from "next";
-import Link from "next/link";
 import React from "react";
+import { Link } from "server/i18n";
 
 import c from "./Nav.scss";
 

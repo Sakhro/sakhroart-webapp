@@ -60,7 +60,7 @@ const getText = (key, lng, t) => {
   }
 };
 
-export const HomePageBase: NextFunctionComponent<IProps> = ({
+export const Home: NextFunctionComponent<IProps> = ({
   t, lng, meta,
 }) => {
   const [imgSrc, setImgSrc] = useState(homeLG);

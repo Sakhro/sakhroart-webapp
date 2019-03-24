@@ -14,7 +14,7 @@ export const MainLayout: NextFunctionComponent<IProps> = ({
   const [navState, setNavState] = useState(false);
 
   const toggleNav = () => {
-    setNavState(!navState);
+    setNavState((prevState) => !prevState);
   };
 
   return (

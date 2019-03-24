@@ -1,0 +1,86 @@
+@import '../../styles/base';
+
+.container {
+  @include p(8, 2);
+  @include mx(auto);
+
+  max-width: 1040px;
+}
+
+
+.title {
+  @include relative;
+  @include font(b42reg, $color: $color-primary);
+
+  transition: font-size 1000ms ease-out;
+  text-transform: uppercase;
+
+  &::after {
+    @include absolute(left 200px top 10px);
+    @include size(90px, 1px);
+
+    opacity: 0.27;
+    content: '';
+    background-color: $color-primary;
+  }
+}
+
+.header {
+  @include flex;
+  @include absolute(top 0 left 0 right 0);
+  @include px(2);
+  @include py(8, 1);
+  @include size(100%, auto);
+  @include z-index('title');
+
+  background-color: $color-white;
+  transition: box-shadow 300ms ease-in-out;
+}
+
+.fixTitle {
+  &.header {
+    @include pt(2);
+    @include fixed;
+
+    box-shadow: 0 4px 25px 15px $color-white;  
+  }
+
+  .title {
+   font-size: 28px;
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.img {
+  @include size(100%);
+  @include border-radius(10px);
+  @include my(4);
+
+  box-shadow: 0 4px 10px 0 $color-shadow;
+}
+
+.subtitle {
+  @include font(b32reg, $color: $color-primary, $align: right);
+  @include mx(auto);
+
+  max-width: 700px;
+}
+
+.parag {
+  @include font(secondary, $color: $color-primary, $align: justify);
+  @include my(3);
+  @include mx(auto);
+
+  @include media-breakpoint-up (sm) {
+    @include font(s24reg);
+
+    max-width: 700px;
+  }
+}
+
+.content {
+  @include mt(8);
+}
