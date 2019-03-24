@@ -43,26 +43,8 @@
 
 .underlayerImg {
   @include size(100%);
-}
-
-.navButton {
-  @include absolute(bottom -60px right 16px);
-  @include size(70px, 100px);
-  @include z-index('title');
-  @include font(b32bold, $color: $color-primary);
-  @include pt(3);
   
-  background-color: transparent;
-  border: 1px solid $color-primary;
-  transition: background-color 100ms ease-in-out;
-
-  &:hover {
-    background-color: rgba($color-primary, 0.17);
-  }
-}
-
-.leftNav {
-  right: 91px;
+  object-fit: cover;
 }
 
 .arrowIconLeft {
@@ -71,18 +53,16 @@
   transform: rotate(180deg);
 }
 
-.arrowIconRight {
-  @include size(20px, auto);
-}
-
 footer {
   @include absolute(bottom 32px left 16px);
   @include z-index('title');
 
-  a {
+  button {
     @include font(b24reg, $color: $color-primary);
 
     text-transform: uppercase;
+    background-color: transparent;
+    border: 0;
 
     &:hover {
       opacity: .6;

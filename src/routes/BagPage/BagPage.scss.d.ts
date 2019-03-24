@@ -5,8 +5,4 @@ export const content: string;
 export const img: string;
 export const underlayer: string;
 export const underlayerImg: string;
-export const navButton: string;
-export const leftNav: string;
-export const arrowIconLeft: string;
-export const arrowIconRight: string;
 export const fixTitle: string;

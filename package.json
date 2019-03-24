@@ -29,7 +29,7 @@
     "node-sass": "^4.11.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-id-swiper": "^2.1.0",
+    "react-id-swiper": "^1.6.9",
     "webp-loader": "^0.4.0"
   },
   "devDependencies": {

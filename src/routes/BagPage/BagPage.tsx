@@ -1,7 +1,7 @@
 import { NextFunctionComponent } from "next";
 import React from "react";
 import Swiper from "react-id-swiper";
-import { Link } from "server/i18n";
+import { Router } from "server/i18n";
 
 import { MainLayout } from "layouts";
 
@@ -60,7 +60,7 @@ export const Bag: NextFunctionComponent<IProps> = ({ t, slug }) => (
       </header>
 
       <div className={c.content}>
-        {/* <Swiper {...params}>
+        <Swiper {...params}>
           {BAGS_DATA[slug].imgs.map((img) => (
             <img
               key={img}
@@ -69,7 +69,7 @@ export const Bag: NextFunctionComponent<IProps> = ({ t, slug }) => (
               alt={t("bag")}
             />
           ))}
-        </Swiper> */}
+        </Swiper>
 
         <div className={c.underlayer}>
           <img
@@ -81,12 +81,13 @@ export const Bag: NextFunctionComponent<IProps> = ({ t, slug }) => (
       </div>
 
       <footer>
-        <Link href="/bags">
-          <a>
-            <ArrowIcon className={c.arrowIconLeft} />
-            {t("bags")}
-          </a>
-        </Link>
+        <button
+          onClick={() => Router.back()}
+          className={c.backButton}
+        >
+          <ArrowIcon className={c.arrowIconLeft} />
+          {t("bags")}
+        </button>
       </footer>
     </section>
   </MainLayout>
