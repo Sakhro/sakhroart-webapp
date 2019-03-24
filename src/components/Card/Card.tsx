@@ -62,14 +62,18 @@ export class Card extends PureComponent<IProps, IState> {
 
   public render() {
     const { classes } = this.state;
-    const { primaryImg, secondaryImg, title, link } = this.props;
+    const { primaryImg, secondaryImg, title, link, itemKey } = this.props;
 
     return (
       <article
         ref={this.handleRef}
         className={cn(c.imgs, classes)}
       >
-        <Link href={link}>
+        <Link
+          href={link}
+          // prefetch={true}
+          as={`/bag/${itemKey}`}
+        >
           <a>
             <img
               className={cn(c.card, c.topImg)}
@@ -214,8 +218,9 @@ export class Card extends PureComponent<IProps, IState> {
 Card.defaultProps = {
   title: "",
   link: "",
-  secondaryImgSrc: "",
-  primaryImgSrc: "",
+  itemKey: "",
+  secondaryImg: "",
+  primaryImg: "",
   delay: 0,
   offset: 150,
   duration: 1,

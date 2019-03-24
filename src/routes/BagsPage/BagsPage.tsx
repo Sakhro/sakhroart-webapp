@@ -15,6 +15,8 @@ interface IProps {
   t: (key: string) => string;
 }
 
+const getLink = (key: string) => ({ pathname: "/bag", query: { slug: key } });
+
 export const Bags: NextFunctionComponent<IProps> = ({ t, meta }) => {
   const [active, setActive] = useState("asteria");
   const fixedTitle: boolean = useSetTitlePosition();
@@ -32,7 +34,7 @@ export const Bags: NextFunctionComponent<IProps> = ({ t, meta }) => {
           {BAGS_KEYS.map((key: string) => (
             <Card
               key={key}
-              link="/"
+              link={getLink(key)}
               itemKey={key}
               title={t(key)}
               setActive={setActive}

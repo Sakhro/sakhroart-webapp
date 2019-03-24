@@ -6453,6 +6453,12 @@ react-i18next@9.0.10:
     hoist-non-react-statics "3.2.1"
     html-parse-stringify2 "2.0.1"
 
+react-id-swiper@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-id-swiper/-/react-id-swiper-2.1.0.tgz#bc0ab46ee0e204b0252880a6a2bb5545803a359d"
+  dependencies:
+    object-assign "^4.1.1"
+
 react-is@16.6.3:
   version "16.6.3"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"

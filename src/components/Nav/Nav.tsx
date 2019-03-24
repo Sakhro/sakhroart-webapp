@@ -29,7 +29,7 @@ export const NavBase: NextFunctionComponent<IProps> = ({
             key={key}
             className={cn(className, { [c.opened]: show })}
           >
-            <Link href={href}>
+            <Link href={href} prefetch={true}>
               <a className={c.link} onClick={onClose}>
                 {t(key)}
               </a>

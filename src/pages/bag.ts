@@ -1,0 +1,1 @@
+export { BagPage as default } from "routes/BagPage";

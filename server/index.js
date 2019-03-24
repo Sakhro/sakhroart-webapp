@@ -22,6 +22,8 @@ const handle = app.getRequestHandler();
 
   server.use('/static', express.static(path.join(__dirname, '..', 'static'), { maxAge: '30 days' }))
 
+  server.get('/bag/:slug', (req, res) => app.render(req, res, '/bag', { slug: req.params.slug }))
+
   server.get('*', (req, res) => handle(req, res))
 
   await server.listen(PORT)

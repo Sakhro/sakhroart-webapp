@@ -1,0 +1,106 @@
+@import '../../styles/base';
+
+.container {
+  @include size(100%, 100vh);
+  @include flex($align: center);
+}
+
+.title {
+  @include relative;
+  @include font(b42reg, $color: $color-primary, $line-height: 1.2);
+  
+  text-transform: uppercase;
+}
+
+.header {
+  @include flex;
+  @include absolute(top 0 left 0 right 0);
+  @include px(2);
+  @include py(10, 1);
+  @include size(100%, auto);
+  @include z-index('title');
+}
+
+.content {
+  @include size(100%, auto);
+  @include mx(auto);
+}
+
+.img {
+  @include border-radius(10px);
+  
+  box-shadow: 0 4px 10px 5px rgba($color-black, 0.05);
+  max-width: 500px;
+}
+
+.underlayer {
+  @include absolute(left -60px top 120px);
+  @include size(100%, 70%);
+
+  z-index: -1;
+  opacity: .07;
+}
+
+.underlayerImg {
+  @include size(100%);
+}
+
+.navButton {
+  @include absolute(bottom -60px right 16px);
+  @include size(70px, 100px);
+  @include z-index('title');
+  @include font(b32bold, $color: $color-primary);
+  @include pt(3);
+  
+  background-color: transparent;
+  border: 1px solid $color-primary;
+  transition: background-color 100ms ease-in-out;
+
+  &:hover {
+    background-color: rgba($color-primary, 0.17);
+  }
+}
+
+.leftNav {
+  right: 91px;
+}
+
+.arrowIconLeft {
+  @include size(20px, auto);
+
+  transform: rotate(180deg);
+}
+
+.arrowIconRight {
+  @include size(20px, auto);
+}
+
+footer {
+  @include absolute(bottom 32px left 16px);
+  @include z-index('title');
+
+  a {
+    @include font(b24reg, $color: $color-primary);
+
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: .6;
+    }
+
+    .arrowIconLeft {
+      @include size(8px, auto);
+      @include mr(1);
+    }
+  }
+}
+
+:global {
+  .swiper-wrapper {
+    @include flex($align: center);
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $color-primary;
+  }
+}
