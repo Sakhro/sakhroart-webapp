@@ -1,0 +1,75 @@
+@import '../../styles/base';
+
+.imgs {
+  @include relative;
+  @include size(100%);
+
+  transition: opacity 1000ms ease-out;
+  margin: 150px auto;
+  opacity: .16;
+}
+
+.titleWrapper {
+  @include mt(2);
+  @include flex($align: center, $justify: flex-end);
+
+  width: 0;
+  height: 0;
+  transition: width 1000ms 700ms ease-out, height 1000ms 1700ms ease-out;
+  overflow: hidden;
+  margin-left: auto;
+  border: 1px solid rgba($color-primary, 0.33);
+}
+
+.title {
+  @include relative(right 0);
+  @include font(b32reg, $color: $color-primary, $align: right);
+
+  transition: right 1000ms 1700ms ease-out, opacity 1000ms 2000ms ease-out;
+  opacity: 0;
+}
+
+.card {
+  @include size(100%, calc(100% - 40px));
+  @include border-radius(5px);
+
+  box-shadow: 0 4px 10px 5px rgba($color-black, 0.05);
+  transition: box-shadow 300ms ease-out;
+
+  &:hover {
+    box-shadow: 0 10px 15px 5px rgba($color-black, 0.10);
+  }
+}
+
+.topImg {
+  z-index: 1;
+}
+
+.bottomImg {
+  @include absolute(left 0 top 0);
+
+  transition: left 1000ms 2000ms ease-out, top 1000ms ease-out;
+  opacity: .16;
+  z-index: -1;
+}
+
+.animateIn {
+  &.imgs {
+    opacity: 1;
+  }
+
+  .title {
+    right: 30px;
+    opacity: 1;
+  }
+
+  .titleWrapper {
+    height: 50px;
+    width: 300px;
+  }
+
+  .bottomImg {
+    left: -20px;
+    top: 20px;
+  }
+}

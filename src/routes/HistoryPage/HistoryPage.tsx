@@ -4,7 +4,7 @@ import { NextFunctionComponent } from "next";
 import React from "react";
 
 import { MainLayout } from "layouts";
-import { setTitlePosition } from "services/hooks";
+import { useSetTitlePosition } from "services/hooks";
 
 import { kenzo, olesyaSakhro } from "static/images/history";
 
@@ -16,7 +16,7 @@ interface IProps {
 }
 
 export const History: NextFunctionComponent<IProps> = ({ meta, t }) => {
-  const fixedTitle = setTitlePosition();
+  const fixedTitle = useSetTitlePosition();
 
   return (
     <MainLayout meta={meta}>

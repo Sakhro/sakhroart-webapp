@@ -10,6 +10,7 @@
         "routes": "./src/routes",
         "layouts": "./src/layouts",
         "services": "./src/services",
+        "constants": "./src/constants",
         "components": "./src/components",
       }
     }]

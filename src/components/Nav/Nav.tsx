@@ -13,7 +13,7 @@ interface IProps {
 
 const links = [
   { key: "home", href: "/", className: c.home },
-  { key: "collections", href: "/collections", className: c.collections },
+  { key: "bags", href: "/bags", className: c.collections },
   { key: "history", href: "/history", className: c.history },
 ];
 

@@ -1,0 +1,17 @@
+@import '../../styles/base';
+
+.container {
+  @include fixed(bottom 50px left 20px);
+  @include z-index('header');
+
+  li {
+    @include size(15px, 10px);
+
+    transition: width 500ms ease-out;
+    border-bottom: 2px solid $color-primary;
+
+    &.active {
+      width: 25px
+    }
+  }
+}

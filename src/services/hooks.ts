@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const setTitlePosition = (): boolean => {
+export const useSetTitlePosition = (): boolean => {
   const [fixedTitle, setTitle] = useState(false);
 
   useEffect(() => {

@@ -1,0 +1,62 @@
+@import '../../styles/base';
+
+.container {
+  @include flex($direction: column);
+  @include p(8, 2);
+  @include size(auto, 100%);
+  @include mx(auto);
+  
+  @include media-breakpoint-up (sm) {
+    max-width: 500px;
+  }
+}
+
+.title {
+  @include relative;
+  @include font(b42reg, $color: $color-primary);
+
+  transition: font-size 1000ms ease-out;
+  text-transform: uppercase;
+
+  &::after {
+    @include absolute(left 200px top 10px);
+    @include size(90px, 1px);
+
+    opacity: 0.27;
+    content: '';
+    background-color: $color-primary;
+  }
+}
+
+.header {
+  @include flex;
+  @include absolute(top 0 left 0 right 0);
+  @include px(2);
+  @include py(8, 1);
+  @include size(100%, auto);
+  @include z-index('title');
+
+  background-color: $color-white;
+  transition: box-shadow 300ms ease-in-out;
+}
+
+.fixTitle {
+  &.header {
+    @include pt(2);
+    @include fixed;
+
+    box-shadow: 0 4px 25px 15px $color-white;  
+  }
+
+  .title {
+   font-size: 28px;
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.content {
+  @include flex($direction: column, $align: center);
+}
