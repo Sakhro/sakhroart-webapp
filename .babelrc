@@ -3,8 +3,8 @@
   "plugins": [
     ["inline-react-svg"],
     ["module-resolver", {
-      "root": ["."],
       "alias": {
+        "server": "./server",
         "static": "./static",
         "styles": "./src/styles",
         "routes": "./src/routes",

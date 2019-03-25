@@ -9,3 +9,5 @@ interface IMetaOg {
   description: string;
   image: string;
 }
+
+type TranslateFuncType = (key: string) => string;

@@ -115,9 +115,11 @@ ul {
   }
 }
 
-.socials {
+.footer {
+  @include flex($justify: space-between, $align: center);
+  @include size(100%, auto);
+  
   opacity: 0;
-  margin-left: auto;
   transform: translateX(200%);
   transition: all 1000ms ease-in-out;
 
@@ -125,6 +127,10 @@ ul {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.socials {
+  @include flex;
 
   a {
     @include ml(3);
@@ -133,5 +139,9 @@ ul {
     &:hover {
       color: darken($color: $color-primary, $amount: 20%);
     }
+  }
+
+  .icon {
+    @include size(30px, auto);
   }
 }

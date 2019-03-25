@@ -6,6 +6,7 @@ import { Router } from "server/i18n";
 import { MainLayout } from "layouts";
 
 import { BAGS_DATA } from "constants/data";
+import { getMeta } from "services/helpers";
 
 import ArrowIcon from "static/icons/arrow-icon.svg";
 
@@ -13,7 +14,7 @@ import c from "./BagPage.scss";
 
 interface IProps {
   slug: string;
-  t: (key: string) => string;
+  t: TranslateFuncType;
 }
 
 const params = {
@@ -35,23 +36,8 @@ const params = {
   },
 };
 
-const getMeta = (t, slug): IMeta => {
-  const title = `${t(slug)} | Культові сумки від Олесі Сахро`;
-  const description = `Сумка для вишуканої жінки, з тонким смаком і бажанням відчувати себе особливою`;
-
-  return {
-    title,
-    description,
-    og: {
-      title,
-      description,
-      image: BAGS_DATA[slug].primaryImg,
-    },
-  };
-};
-
 export const Bag: NextFunctionComponent<IProps> = ({ t, slug }) => (
-  <MainLayout meta={getMeta(t, slug)}>
+  <MainLayout meta={getMeta(t, BAGS_DATA[slug].primaryImg)}>
     <section className={c.container}>
       <header className={c.header}>
         <h1 className={c.title}>
@@ -80,7 +66,7 @@ export const Bag: NextFunctionComponent<IProps> = ({ t, slug }) => (
         </div>
       </div>
 
-      <footer>
+      <footer className={c.footer}>
         <button
           onClick={() => Router.back()}
           className={c.backButton}

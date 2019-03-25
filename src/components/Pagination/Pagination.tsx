@@ -11,7 +11,7 @@ const renderItem = (active) => (index) => (
 );
 
 interface IProps {
-  active: number;
+  active: string;
   data: any[];
 }
 

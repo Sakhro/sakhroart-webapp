@@ -12,7 +12,10 @@ interface IProps {
   primaryImg: string;
   secondaryImg: string;
   title: string;
-  link: string;
+  link: {
+    pathname: string
+    query: any;
+  };
   animateOnce?: boolean;
   initiallyVisible?: boolean;
   animatePreScroll?: boolean;
@@ -71,7 +74,7 @@ export class Card extends PureComponent<IProps, IState> {
       >
         <Link
           href={link}
-          // prefetch={true}
+          prefetch={true}
           as={`/bag/${itemKey}`}
         >
           <a>
@@ -217,7 +220,10 @@ export class Card extends PureComponent<IProps, IState> {
 
 Card.defaultProps = {
   title: "",
-  link: "",
+  link: {
+    pathname: "",
+    query: null,
+  },
   itemKey: "",
   secondaryImg: "",
   primaryImg: "",

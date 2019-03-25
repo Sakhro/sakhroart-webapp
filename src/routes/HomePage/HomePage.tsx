@@ -4,15 +4,15 @@ import React, { useEffect, useState } from "react";
 
 import { LanguageSwitcher } from "components";
 import { MainLayout } from "layouts";
+import { getMeta } from "services/helpers";
 
 import c from "./HomePage.scss";
 
 import { homeLG, homeXl, homeXS } from "static/images/home";
 
 interface IProps {
-  lng: string;
-  meta: IMeta;
-  t: (key: string) => string;
+  lng: "ua" | "en";
+  t: TranslateFuncType;
 }
 
 const updateDimensions = (setImgSrc) => () => {
@@ -61,9 +61,9 @@ const getText = (key, lng, t) => {
 };
 
 export const Home: NextFunctionComponent<IProps> = ({
-  t, lng, meta,
+  t, lng,
 }) => {
-  const [imgSrc, setImgSrc] = useState(homeLG);
+  const [imgSrc, setImgSrc] = useState(homeXl);
 
   useEffect(() => {
     updateDimensions(setImgSrc)();
@@ -76,13 +76,13 @@ export const Home: NextFunctionComponent<IProps> = ({
   }, []);
 
   return (
-    <MainLayout meta={meta}>
+    <MainLayout meta={getMeta(t, homeXl)}>
       <img
         className={c.bg}
         src={imgSrc}
       />
 
-      <LanguageSwitcher lng={lng} />
+      <LanguageSwitcher lng={lng} absolute={true} />
 
       <section>
         <div className={c.firstRow}>

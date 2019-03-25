@@ -6,20 +6,20 @@ import React from "react";
 import { MainLayout } from "layouts";
 import { useSetTitlePosition } from "services/hooks";
 
+import { getMeta } from "services/helpers";
 import { kenzo, olesyaSakhro } from "static/images/history";
 
 import c from "./HistoryPage.scss";
 
 interface IProps {
-  meta: IMeta;
-  t: (key: string) => string;
+  t: TranslateFuncType;
 }
 
-export const History: NextFunctionComponent<IProps> = ({ meta, t }) => {
+export const History: NextFunctionComponent<IProps> = ({ t }) => {
   const fixedTitle = useSetTitlePosition();
 
   return (
-    <MainLayout meta={meta}>
+    <MainLayout meta={getMeta(t, olesyaSakhro)}>
       <article className={c.container}>
         <header className={cn(c.header, { [c.fixTitle]: fixedTitle })}>
           <h1 className={c.title}>

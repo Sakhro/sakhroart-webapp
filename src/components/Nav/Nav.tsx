@@ -3,10 +3,18 @@ import { NextFunctionComponent } from "next";
 import React from "react";
 import { Link } from "server/i18n";
 
+import { LanguageSwitcher } from 'components';
+
+import { FB_URL, INSTAGRAM_URL } from "constants/config";
+
+import FacebookIcon from "static/icons/facebook.svg";
+import InstagramIcon from "static/icons/instagram.svg";
+
 import c from "./Nav.scss";
 
 interface IProps {
   show: boolean;
+  lng: "ua" | "en";
   t: (key: string) => string;
   onClose: () => void;
 }
@@ -18,7 +26,7 @@ const links = [
 ];
 
 export const NavBase: NextFunctionComponent<IProps> = ({
-  show, onClose, t,
+  show, onClose, t, lng,
 }) => (
     <nav className={cn(c.container, show && c.opened)}>
       <button className={c.close} onClick={onClose} />
@@ -38,13 +46,26 @@ export const NavBase: NextFunctionComponent<IProps> = ({
         ))}
       </ul>
 
-      {/* <div className={cn(c.socials, show && c.opened)}>
-      <a href="//www.instagram.com/olesya.sakhro" rel='noreferrer noopener' target="_blank">
-        <i className="fab fa-instagram fa-2x"></i>
-      </a>
-      <a href="//web.facebook.com/olesya.sakhro" rel='noreferrer noopener' target="_blank">
-        <i className="fab fa-facebook-square fa-2x"></i>
-      </a>
-    </div> */}
+      <footer className={cn(c.footer, { [c.opened]: show })}>
+        <LanguageSwitcher lng={lng} />
+
+        <div className={c.socials}>
+          <a
+            href={INSTAGRAM_URL}
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            <InstagramIcon className={c.icon} />
+          </a>
+
+          <a
+            href={FB_URL}
+            rel="noreferrer noopener"
+            target="_blank"
+          >
+            <FacebookIcon className={c.icon} />
+          </a>
+        </div>
+      </footer>
     </nav>
   );

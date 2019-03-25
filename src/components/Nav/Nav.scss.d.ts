@@ -6,3 +6,5 @@ export const collections: string;
 export const link: string;
 export const close: string;
 export const socials: string;
+export const icon: string;
+export const footer: string;

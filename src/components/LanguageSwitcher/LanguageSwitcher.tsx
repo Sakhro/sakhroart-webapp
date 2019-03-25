@@ -9,13 +9,14 @@ import UaFlag from "static/icons/ua.svg";
 import c from "./LanguageSwitcher.scss";
 
 interface IProps {
+  absolute?: boolean;
   lng: "ua" | "en";
 }
 
 const changeLanguage = (lng: string) => () => i18n.changeLanguage(lng);
 
-export const LanguageSwitcher: NextFunctionComponent<IProps> = ({ lng }) => (
-  <div className={c.container}>
+export const LanguageSwitcher: NextFunctionComponent<IProps> = ({ lng, absolute }) => (
+  <div className={cn(c.container, { [c.absolute]: absolute })}>
     <UaFlag
       className={cn(c.lng, { [c.active]: lng === "ua" })}
       onClick={changeLanguage("ua")}

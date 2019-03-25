@@ -6,3 +6,6 @@ export const img: string;
 export const underlayer: string;
 export const underlayerImg: string;
 export const fixTitle: string;
+export const footer: string;
+export const backButton: string;
+export const arrowIconLeft: string;

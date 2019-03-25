@@ -1,9 +1,12 @@
 @import '../../styles/base';
 
 .container {
-  @include absolute(top 12px left 16px);
   @include flex;
-  @include z-index('languages');
+
+  &.absolute {
+    @include absolute(top 12px left 16px);
+    @include z-index('languages');
+  }
 }
 
 .lng {

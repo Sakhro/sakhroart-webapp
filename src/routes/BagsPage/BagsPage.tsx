@@ -7,22 +7,25 @@ import { MainLayout } from "layouts";
 import { useSetTitlePosition } from "services/hooks";
 
 import { BAGS_DATA, BAGS_KEYS } from "constants/data";
+import { getMeta } from "services/helpers";
+
+import { homeXl } from "static/images/home";
 
 import c from "./BagsPage.scss";
 
 interface IProps {
   meta: IMeta;
-  t: (key: string) => string;
+  t: TranslateFuncType;
 }
 
 const getLink = (key: string) => ({ pathname: "/bag", query: { slug: key } });
 
-export const Bags: NextFunctionComponent<IProps> = ({ t, meta }) => {
+export const Bags: NextFunctionComponent<IProps> = ({ t }) => {
   const [active, setActive] = useState("asteria");
   const fixedTitle: boolean = useSetTitlePosition();
 
   return (
-    <MainLayout meta={meta}>
+    <MainLayout meta={getMeta(t, homeXl)}>
       <section className={c.container}>
         <header className={cn(c.header, { [c.fixTitle]: fixedTitle })}>
           <h1 className={c.title}>
@@ -35,6 +38,7 @@ export const Bags: NextFunctionComponent<IProps> = ({ t, meta }) => {
             <Card
               key={key}
               link={getLink(key)}
+              offset={100}
               itemKey={key}
               title={t(key)}
               setActive={setActive}
