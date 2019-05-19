@@ -10,7 +10,7 @@
     "build": "next build src",
     "start": "NODE_ENV=production node server",
     "export": "yarn build && next export src",
-    "deploy:hosting": "yarn export && firebase deploy --only hosting",
+    "deploy:hosting": "firebase deploy --only hosting",
     "lint": "tslint -c tslint.json 'src/**/*.ts{,x}' 'server/**/*.ts{,x}'",
     "lint:fix": "tslint -c tslint.json 'src/**/*.ts{,x}' 'server/**/*.ts{,x}' --fix --format verbose"
   },

@@ -16,6 +16,7 @@ import { JUVENTAS_IMGS, juventasPrimary, juventasSecondary } from "static/images
 import { KANDINSKY_IMGS, kandinskyPrimary, kandinskySecondary } from "static/images/bags/kandinsky";
 import { MALVA_IMGS, malvaPrimary, malvaSecondary } from "static/images/bags/malva";
 import { MARTRICARIA_IMGS, martricariaPrimary, martricariaSecondary } from "static/images/bags/martricaria";
+import { MAYA_IMGS, mayaPrimary, mayaSecondary } from "static/images/bags/maya";
 import { PAPAVER_IMGS, papaverPrimary, papaverSecondary } from "static/images/bags/papaver";
 import { REYA_IMGS, reyaPrimary, reyaSecondary } from "static/images/bags/reya";
 import { SOPHIA_IMGS, sophiaPrimary, sophiaSecondary } from "static/images/bags/sophia";
@@ -42,6 +43,7 @@ export const BAGS_KEYS = [
   "papaver",
   "reya",
   "sophia",
+  "maya",
 ];
 
 export const BAGS_DATA = {
@@ -149,5 +151,10 @@ export const BAGS_DATA = {
     primaryImg: sophiaPrimary,
     secondaryImg: sophiaSecondary,
     imgs: SOPHIA_IMGS,
+  },
+  maya: {
+    primaryImg: mayaPrimary,
+    secondaryImg: mayaSecondary,
+    imgs: MAYA_IMGS,
   },
 };

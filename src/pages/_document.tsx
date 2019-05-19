@@ -32,6 +32,17 @@ export default class MyDocument extends Document<IProps> {
             rel="stylesheet"
           />
 
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-75733367-6" />
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-75733367-6');`,
+            }}
+          />
+
           <link rel="shortcut icon" href="/static/favicon.ico" />
         </Head>
 

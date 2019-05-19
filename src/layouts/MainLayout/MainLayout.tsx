@@ -21,6 +21,7 @@ export const MainLayout: NextFunctionComponent<IProps> = ({
     <Fragment>
       <Head>
         <title>{meta.title}</title>
+        <meta name="description" content={meta.og.description} />
 
         {meta.og && (
           <Fragment>
@@ -43,7 +44,6 @@ export const MainLayout: NextFunctionComponent<IProps> = ({
 
       <Header
         isHome={false}
-        navOpen={navState}
         toggleNav={toggleNav}
       />
 
